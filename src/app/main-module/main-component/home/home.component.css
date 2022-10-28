@@ -1,0 +1,19 @@
+/* button */
+.btn{
+    font-family:' Nunito' sans-serif;
+    font-weight: 600;
+    transition: .5s;
+    background-color: aqua;
+
+}
+.myButton:hover{
+    background-color: darkcyan;
+}
+.bg-warning{
+    background-color: aqua;
+}
+ 
+.bg-warning:hover{
+    background-color: darkcyan;
+
+}
