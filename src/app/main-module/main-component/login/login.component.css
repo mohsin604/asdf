@@ -1,101 +1,131 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
-:root {
-  --main-color: #255d50;
+/* login */
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-body,
-html {
-  font-family: "Poppins", sans-serif;
-  height: 100%;
-  background-color: #efe8dc;
+* {
+  box-sizing: border-box;
 }
 
-/* Uses line 20, otherwise selector wouldnt work */
-input.form-control:focus ~ label {
-  color: var(--main-color) !important;
+/* style the container */
+.container {
+  position: relative;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px 0 30px 0;
+} 
+.container{
+  max-height: 500px;
 }
 
-.bg-main {
-  background-color: var(--main-color);
-}
-
-a:hover {
-  color: var(--main-color) !important;
-}
-
-.bg-image {
-  background-image: url("https://cdn.dribbble.com/users/31348/screenshots/4304953/attachments/981627/van_morrison_la.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
+/* style inputs and link buttons */
+input,
+.btn {
   width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; /* remove underline from anchors */
 }
 
-/* Makes the label go above the input so it can be styled*/
-.form-group {
-  display: flex;
-  flex-direction: column-reverse;
+input:hover,
+.btn:hover {
+  opacity: 1;
 }
 
-.form-control:focus {
-  -webkit-box-shadow: none;
-  box-shadow: none;
+/* add appropriate colors to fb, twitter and google buttons */
+.fb {
+  background-color: #3B5998;
+  color: white;
 }
 
-/* Changes the inputs to be underlined */
-input:not([type="submit"]) {
-  outline: 0 !important;
-  border-width: 0 0 1.5px !important;
-  border-color: lightgrey !important;
-  color: black;
+.twitter {
+  background-color: #55ACEE;
+  color: white;
 }
 
-.text-black,
-.text-black:hover {
-  color: black;
+.google {
+  background-color: #dd4b39;
+  color: white;
 }
 
-/* Changes the hover color of the sign in/up button*/
-button.btn-dark:hover {
-  background-color: var(--main-color) !important;
+/* style the submit button */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  cursor: pointer;
 }
 
-/* Removes the blue outline from buttons*/
-button {
-  outline: none !important;
-  box-shadow: none !important;
+input[type=submit]:hover {
+  background-color: #45a049;
 }
 
-/* Makes Carsoul indicators round */
-.carousel-indicators.round li {
-  width: 10px;
-  height: 10px;
-  border-radius: 100%;
+/* Two-column layout */
+.col {
+  float: left;
+  width: 50%;
+  margin: auto;
+  padding: 0 50px;
+  margin-top: 6px;
 }
 
-/* MAKES CAROUSEL SLIDE UP AND DOWN */
-
-.vert .carousel-item-next.carousel-item-left,
-.vert .carousel-item-prev.carousel-item-right {
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.vert .carousel-item-next,
-.vert .active.carousel-item-right {
-  -webkit-transform: translate3d(0, 100%, 0);
-  transform: translate3d(0, 100% 0);
+/* vertical line */
+.vl {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  border: 2px solid #ddd;
+  height: 175px;
 }
 
-.vert .carousel-item-prev,
-.vert .active.carousel-item-left {
-  -webkit-transform: translate3d(0, -100%, 0);
-  transform: translate3d(0, -100%, 0);
+/* text inside the vertical line */
+.vl-innertext {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 8px 10px;
 }
 
-/* Good alternative images
-1. background-image: url("https://cdn.dribbble.com/users/1731254/screenshots/12332372/media/5e2652000291ef08dc21d4cb90382828.png"); 
-2. background-image: url("https://cdn.dribbble.com/users/175710/screenshots/2051146/dribbble_exspenses_cat-01.png");
-3. background-image: url("https://i.imgur.com/f4H7inh.jpg"); */
+/* hide some text on medium and large screens */
+.hide-md-lg {
+  display: none;
+}
+
+/* bottom container */
+.bottom-container {
+  text-align: center;
+  background-color: #666;
+  border-radius: 0px 0px 4px 4px;
+}
+
+/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 650px) {
+  .col {
+    width: 100%;
+    margin-top: 0;
+  }
+  /* hide the vertical line */
+  .vl {
+    display: none;
+  }
+  /* show the hidden text on small screens */
+  .hide-md-lg {
+    display: block;
+    text-align: center;
+  }
+}
