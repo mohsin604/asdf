@@ -317,7 +317,7 @@ input[type="email"] {
 
 #contact form input[type="submit"] {
     width: 100%;
-    background-color: #6599ff;
+    background-color: aqua;
     color: white;
     font-size: 15px;
 }
